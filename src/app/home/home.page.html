@@ -1,0 +1,45 @@
+<ion-header [translucent]="true" *ngIf="!alarmOn">
+  <ion-toolbar >
+    <ion-title>
+      <!--ion-button color="primary" ion-button block (click)="turnFlash()" >luz</ion-button>
+      <ion-button color="primary" ion-button block (click)="turnVib()" >vib</ion-button-->
+      <ion-button color="primary" ion-button block (click)="logout()" style="float: right;">Cerrar Sesión</ion-button>
+      
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <!--ion-card >
+    Acceleration X: {{x}}<br>
+    Acceleration Y: {{y}}<br>
+    Acceleration z: {{z}}<br>
+    Stamp: {{timestamp}}
+  </on-card-->
+  <div [ngStyle]="{'background-color':buttonColor}" style="width:100%;height:100%">
+
+  <ion-button [color]="buttonColor" *ngIf="!alarmOn" (click)="alarma()" style="width:99%;height:99%;"
+              [ngStyle]="{'background-color':buttonColor}" fill="clear">
+    
+      <img [src]="lockimg" style="width:50%;" class="center">
+    
+  </ion-button>
+  <ion-button [color]="buttonColor" *ngIf="alarmOn" (click)="putpass()" style="width:99%;height:99%;"
+              [ngStyle]="{'background-color':buttonColor}" fill="clear">
+    
+      <img [src]="lockimg" style="width:50%;" class="center">
+    
+  </ion-button>
+
+  <!--ion-alert
+  *ngIf="alarmOn"
+  trigger="present-alert"
+  header="Ingrese su contraseña (748159263aaAA) (12546789AbcD) (aswerwwetrBHGT1254)"
+  [buttons]="alertButtons"
+  [inputs]="alertInputs"
+  [(ngModel)]="popInput"
+  name="fieldName" ngDefaultControl
+  (didDismiss)="showAlertData()"
+></ion-alert-->
+</div>
+</ion-content>

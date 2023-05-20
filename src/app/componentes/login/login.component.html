@@ -1,0 +1,59 @@
+<ion-content [fullscreen]="true">
+    <!--ion-item>
+        <ion-label>Circular</ion-label>
+        <ion-spinner name="circular"></ion-spinner>
+    </ion-item--><br><br><br>
+    <img src="assets/sirena2.gif"  class="center">
+    <form [formGroup]="ionicForm" (ngSubmit)="login()" novalidate class="transparent">
+      <ion-card id="NongModel"class="transparent">
+        <ion-card class="transparent">
+          <ion-item style="border: 3px;">
+            <ion-label class="transparent"><ion-icon name="at-outline" ></ion-icon></ion-label>
+            <ion-input  [(ngModel)]="email" placeholder="Correo" type="email" formControlName="email" ></ion-input>
+          </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+          Por favor ingrese una dirección de correo.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+          Por favor ingrese una dirección de correo valdia.
+        </span>
+        <br>
+          <ion-item>
+            <ion-label><ion-icon name="lock-closed-outline"></ion-icon></ion-label>
+            <ion-input [(ngModel)]="pass" placeholder="Contraseña" type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+            Por favor ingrese una contraseña.
+          </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.pattern">
+            La contraseña debe contener una mayúscula y un número como minimo.
+          </span>
+          <!--ion-label (click)="taler()" class="ion-float-right">Olvidé mi contraseña</ion-label--><br><br>
+          <ion-button color="danger" ion-button expand="block" shape="round" type="submit" style="color: white;">Ingresar</ion-button>
+        </ion-card>
+      </ion-card>
+    </form>
+      <br>
+      <!--splash <br>
+      png con iconos y splash<br-->
+
+
+      <!--ion-button color="primary" ion-button block (click)="goBack()">skip</ion-button><br>
+      <ion-button color="primary" ion-button block (click)="animsplash()">test splash</ion-button-->
+ 
+      
+    </ion-content>
+
+    <ion-footer [translucent]="true">
+      <ion-toolbar>
+        <ion-list>
+          <ion-item>
+            <ion-select  aria-label="Fruit" interface="popover" placeholder="Elija un usuario" (ionChange)="loadUser()" [(ngModel)]="selectedUser">
+              <ion-select-option value="1">(prueba) Usuario 1</ion-select-option>
+              <ion-select-option value="2">(prueba) Usuario 2</ion-select-option>
+              <ion-select-option value="3">(prueba) Usuario 3</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-toolbar>
+    </ion-footer>

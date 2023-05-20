@@ -1,0 +1,23 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30%;
+}
+
+.wbg{
+    background-color: white;
+}
+
+  
+
+ion-content {
+    --background: #34B0D2 url('../../../assets/circuitbgshade.png') no-repeat center top fixed;
+    background-size: cover;      
+  }
+
+.transparent{
+    background-color: rgba(0, 133, 255, 0);
+    box-shadow: none;
+}
+
